@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>カフェドリンク注文システム</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Café Order</h1>
+            <p class="subtitle">お好きなドリンクをお選びください</p>
+        </header>
+
+        <main>
+            <section class="menu-section">
+                <h2>メニュー</h2>
+                <div class="drink-grid" id="drinkGrid"></div>
+            </section>
+
+            <section class="order-section">
+                <h2>注文内容</h2>
+                <div class="cart" id="cart">
+                    <p class="empty-cart">カートは空です</p>
+                </div>
+                <div class="cart-summary">
+                    <div class="total">
+                        <span>合計:</span>
+                        <span class="total-price" id="totalPrice">¥0</span>
+                    </div>
+                    <button class="btn-order" id="orderBtn" disabled>注文する</button>
+                </div>
+            </section>
+        </main>
+
+        <div class="modal" id="confirmModal">
+            <div class="modal-content">
+                <h3>注文を確定しますか？</h3>
+                <div class="modal-order-summary" id="modalOrderSummary"></div>
+                <div class="modal-total" id="modalTotal"></div>
+                <div class="modal-actions">
+                    <button class="btn-cancel" id="cancelBtn">キャンセル</button>
+                    <button class="btn-confirm" id="confirmBtn">確定する</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="successModal">
+            <div class="modal-content success">
+                <div class="success-icon">✓</div>
+                <h3>ご注文ありがとうございます！</h3>
+                <p>注文番号: <span id="orderNumber"></span></p>
+                <p class="success-message">しばらくお待ちください</p>
+                <button class="btn-close" id="closeBtn">閉じる</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
